@@ -1,5 +1,7 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 import MovieList from "./components/MovieList";
+import AddMovieForm from "./components/AddMovieForm";
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [isLoader,setIsLoader]=useState(false);
@@ -81,6 +83,9 @@ if (isLoader) {
 }
   return (
     <Fragment>
+      <section>
+    <AddMovieForm />
+    </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
         <button onClick={stopRetryingHandler}>Calcel</button>
